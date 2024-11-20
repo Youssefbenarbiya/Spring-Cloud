@@ -1,28 +1,31 @@
+spring:
+  application:
+    name: api-gateway
 
+  ##GATEWAY CONFIGURATIONS
 
+  cloud:
+    gateway:
+      routes:
+        ## service1
+        - id: equipe
+          uri: lb://equipe
+          predicates:
+            - Path=/equipe/**
+          filters:
+            - StripPrefix=1
+
+        ## Service2
+        - id: usermicroservice
+          uri: lb://usermicroservice
+          predicates:
+            - Path=/usermicroservice/**
+          filters:
+            - StripPrefix=1
 server:
-  port: 8089
+  port: 8080
 
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka
-
-spring:
-  application:
-    name: api-gateway
-  cloud:
-    gateway:
-      routes:
-        - id: equipe
-          uri: lb://EQUIPE
-          predicates:
-            - Path=/equipes/**
-
-        - id: user
-          uri: lb://USERS-MICROSERVICES
-          predicates:
-            - Path=/users/**
-      default-filters:
-        - DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Credentials
-
