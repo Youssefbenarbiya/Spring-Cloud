@@ -9,30 +9,42 @@
   <style>
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background-color: white; /* Set the body background color */
+      background-color: white;
+      /* Set the body background color */
     }
 
     .navbar {
-      display: flex; /* Use flex for the navbar */
-      justify-content: space-between; /* Space between left and right sections */
-      align-items: center; /* Center items vertically */
-      background-color: #343a40; /* Dark background */
-      padding: 10px 20px; /* Padding for navbar */
+      display: flex;
+      /* Use flex for the navbar */
+      justify-content: space-between;
+      /* Space between left and right sections */
+      align-items: center;
+      /* Center items vertically */
+      background-color: #343a40;
+      /* Dark background */
+      padding: 10px 20px;
+      /* Padding for navbar */
       color: white;
     }
 
     .navbar-brand {
       font-size: 24px;
       font-weight: bold;
-      color: white; /* Navbar brand color */
+      color: white;
+      /* Navbar brand color */
     }
 
     .navbar-left {
-      display: flex; /* Use flex for left navbar items */
-      align-items: left; /* Center items vertically */
-      padding: 0; /* Remove default padding */
-      margin: 0; /* Remove default margin */
-      list-style-type: none; /* Remove bullet points */
+      display: flex;
+      /* Use flex for left navbar items */
+      align-items: left;
+      /* Center items vertically */
+      padding: 0;
+      /* Remove default padding */
+      margin: 0;
+      /* Remove default margin */
+      list-style-type: none;
+      /* Remove bullet points */
     }
 
     .navbar a {
@@ -44,11 +56,13 @@
     }
 
     .navbar a:hover {
-      background-color: red; /* Highlight color for links */
+      background-color: red;
+      /* Highlight color for links */
     }
 
     .dropdown {
-      position: relative; /* Required for absolute positioning of dropdown */
+      position: relative;
+      /* Required for absolute positioning of dropdown */
     }
 
     .dropbtn {
@@ -57,48 +71,69 @@
       outline: none;
       color: white;
       padding: 14px 16px;
-      background-color: inherit; /* Inherit background */
-      font-family: inherit; /* Inherit font family */
-      cursor: pointer; /* Pointer cursor for buttons */
+      background-color: inherit;
+      /* Inherit background */
+      font-family: inherit;
+      /* Inherit font family */
+      cursor: pointer;
+      /* Pointer cursor for buttons */
     }
 
     .dropdown-content {
-      display: none; /* Hide dropdown by default */
-      position: absolute; /* Position dropdown */
-      background-color: #f9f9f9; /* Dropdown background */
-      min-width: 160px; /* Minimum width for dropdown */
-      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); /* Shadow */
-      z-index: 1; /* Stack dropdown above other elements */
+      display: none;
+      /* Hide dropdown by default */
+      position: absolute;
+      /* Position dropdown */
+      background-color: #f9f9f9;
+      /* Dropdown background */
+      min-width: 160px;
+      /* Minimum width for dropdown */
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      /* Shadow */
+      z-index: 1;
+      /* Stack dropdown above other elements */
     }
 
     .dropdown-content a {
-      color: black; /* Dropdown item color */
-      padding: 12px 16px; /* Padding for dropdown items */
+      color: black;
+      /* Dropdown item color */
+      padding: 12px 16px;
+      /* Padding for dropdown items */
       text-decoration: none;
-      display: block; /* Block display for easy clicking */
-      text-align: left; /* Left align text */
+      display: block;
+      /* Block display for easy clicking */
+      text-align: left;
+      /* Left align text */
     }
 
     .dropdown-content a:hover {
-      background-color: #ddd; /* Highlight on hover */
+      background-color: #ddd;
+      /* Highlight on hover */
     }
 
     .dropdown:hover .dropdown-content {
-      display: block; /* Show dropdown on hover */
+      display: block;
+      /* Show dropdown on hover */
     }
 
     /* Additional spacing between items */
     .nav-item {
-      margin-right: 20px; /* Space between navbar items */
+      margin-right: 20px;
+      /* Space between navbar items */
     }
 
     .navbar-right {
-      margin-left: auto; 
-      display: flex; /* Use flex for left navbar items */
-      align-items: center; /* Center items vertically */
-      padding: 0; /* Remove default padding */
-      margin: 0; /* Remove default margin */
-      list-style-type: none; /* Remove
+      margin-left: auto;
+      display: flex;
+      /* Use flex for left navbar items */
+      align-items: center;
+      /* Center items vertically */
+      padding: 0;
+      /* Remove default padding */
+      margin: 0;
+      /* Remove default margin */
+      list-style-type: none;
+      /* Remove
       /* Push right items to the far right */
     }
   </style>
@@ -123,11 +158,12 @@
       </li>
     </ul>
     <ul class="navbar-right">
-      <li class="nav-item">  
-        
-       <a class="nav-link">{{authService.loggedUser}}</a> </li>
+      <li class="nav-item">
 
-       <li class="nav-item dropdown">
+        <a class="nav-link">{{authService.loggedUser}}</a>
+      </li>
+
+      <li class="nav-item dropdown">
         <button class="dropbtn">Connexion <i class="fa fa-caret-down"></i></button>
         <div class="dropdown-content">
           <a *ngIf="!authService.isloggedIn" class="dropdown-item" routerLink="login">Login</a>
